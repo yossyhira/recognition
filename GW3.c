@@ -33,8 +33,6 @@ void detectErrorType(char *str1, char *str2) {
         } else if(count==0){
             printf("最適な文字列に操作後：%s\n",str2);
             break;
-        }else {
-            printf("複数の誤り\n");
         }
     }
 
@@ -51,7 +49,6 @@ void detectErrorType(char *str1, char *str2) {
                    }
                   // 文字列の最後にヌル文字を追加
                   str2[len2 - 1] = '\0';
-                   
 
                     break;
             } 
