@@ -9,7 +9,6 @@ void detectErrorType(char *str1, char *str2) {
     int true_letter;
     int diff_letter;
 
-//
     // 文字列の長さが同じ場合、置換誤りの可能性がある
     if (diff == 0) {
         int count = 0;
