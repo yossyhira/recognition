@@ -19,7 +19,7 @@ void detectErrorType(char *str1, char *str2) {
             }
         }
         if (count == 1) {
-            printf("置換誤り:入力２の%d番目にある'%c' を '%c' に置換する\n",diff_letter+1, str2[diff_letter], str1[true_letter]);
+            printf("置換誤り(%d文字目の'%c' を '%c' に置換する)\n",diff_letter+1, str2[diff_letter], str1[true_letter]);
         } else {
             printf("複数の誤り\n");
         }
@@ -29,28 +29,28 @@ void detectErrorType(char *str1, char *str2) {
         int i = 0, j = 0;
         while (i < len1 && j < len2) {
             if (str1[i] != str2[j]) {
-                    printf("挿入(付加)誤り:%d番目の'%c'を削除する\n",j+1,str2[j]);
+                    printf("挿入(付加)誤り(%d文字目の'%c'を削除する)\n",j+1,str2[j]);
                     return;
             } else {
                 i++;
                 j++;
             }
         }
-        printf("挿入(付加)誤り:%d番目の'%c'を削除する\n",j+1,str2[j]);
+        printf("挿入(付加)誤り(%d文字目の'%c'を削除する)\n",j+1,str2[j]);
     }
     // 文字列2が文字列1よりも短い場合、削除誤りの可能性がある
     else if (diff == 1) {
         int i = 0, j = 0;
         while (i < len1 && j < len2) {
             if (str1[i] != str2[j]) {
-                    printf("削除誤り:%d番目に'%c'を挿入する\n",i+1,str1[i]);
+                    printf("削除誤り(%d文字目に'%c'を挿入する)\n",i+1,str1[i]);
                     return;
             } else {
                 i++;
                 j++;
             }
         }
-        printf("削除誤り:%d番目に'%c'を挿入する\n",i+1,str1[i]);
+        printf("削除誤り(%d文字目に'%c'を挿入する)\n",i+1,str1[i]);
     } else {
         printf("複数の誤り\n");
     }
@@ -65,7 +65,8 @@ int main() {
     printf("入力２: ");
     scanf("%s", str2);
 
-    // 誤りの種類を検出して出力
+    printf("操作: ");
+   // 誤りの種類を検出して出力
     detectErrorType(str1, str2);
 
     return 0;
