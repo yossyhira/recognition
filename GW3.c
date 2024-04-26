@@ -52,7 +52,7 @@ void OptimalString(char *str1, char *str2) {
         }
     }
     // 文字列2が文字列1よりも短い場合、削除誤りの可能性がある
-    else if (diff == 1) {
+    else if (diff >= 1) {
         int i = 0, j = 0;
         while (i < len1 && j < len2) {
             if (str1[i] != str2[j]) {
@@ -61,7 +61,7 @@ void OptimalString(char *str1, char *str2) {
                      str2[k] = str2[k - 1];
                     }
                    str2[j]=str1[i];
-                   str2[len2 + 1] = '\0';//最後にnull文字つける
+                   str2[len2 + 1] = '\0';
                    break; 
             } else {
                 i++;
